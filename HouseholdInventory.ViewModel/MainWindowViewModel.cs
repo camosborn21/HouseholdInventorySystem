@@ -12,7 +12,7 @@ namespace HouseholdInventory.ViewModel
 	{
 	    private IUIDataProvider _dataProvider;
         private IList<Asset> _assets;
-
+	    private IList<Owner> _owners;
 	    public MainWindowViewModel(IUIDataProvider dataProvider)
 	    {
 	        _dataProvider = dataProvider;
@@ -28,6 +28,18 @@ namespace HouseholdInventory.ViewModel
                 return _assets;
             }
         }
+
+	    public IList<Owner> Owners
+	    {
+	        get
+	        {
+	            if (_owners == null)
+	            {
+	                _dataProvider.GetOwners();
+	            }
+	            return _owners;
+	        }
+	    }
 
 	    
 	}

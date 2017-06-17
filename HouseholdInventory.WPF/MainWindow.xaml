@@ -8,7 +8,8 @@
         mc:Ignorable="d"
         Title="Household Inventory"
         Height="350"
-        Width="525">
+        Width="525"
+        DataContext="{Binding Source={x:Static ViewModel:ViewModelLocator.MainWindowViewModelStatic}}">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -66,9 +67,22 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <ListBox Grid.Row="1">
-                        
-                    </ListBox>
+                    <TextBlock Grid.Row="1"
+                               Text="Owners"/>
+                    <ListBox Grid.Row="2"
+                             ItemsSource="{Binding Owners}"
+                             DisplayMemberPath="FirstName"
+                             VerticalAlignment="Top"
+                             Height="180"
+                             Width="250"/>
+                    <TextBlock Grid.Row="3"
+                               Text="Assets"/>
+                    <ListBox Grid.Row="4"
+                             ItemsSource="{Binding Assets}"
+                             DisplayMemberPath="AssetName"
+                             VerticalAlignment="Top"
+                             Height="180"
+                             Width="250"/>
                 </Grid>
             </Expander>
             <TabControl Margin="4"
