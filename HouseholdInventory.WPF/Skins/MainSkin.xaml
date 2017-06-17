@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:HouseholdInventory.WPF.Skins">
+	<Color x:Key="companyGray">#FF404042</Color>
+    <SolidColorBrush x:Key="mainGrayBrush"
+                     Color="{StaticResource companyGray}" />
+    <FontFamily x:Key="ProximaNovaThinFont">./#Proxima Nova Thin</FontFamily>
+</ResourceDictionary>
